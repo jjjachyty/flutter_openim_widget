@@ -510,7 +510,7 @@ class _ChatItemViewState extends State<ChatItemView> {
                 soundPath: sound?.soundPath,
                 soundUrl: sound?.sourceUrl,
                 duration: sound?.duration,
-                isPlaying: widget.isPlayingSound,
+                // isPlaying: widget.isPlayingSound,
               ),
             );
           }

@@ -23,6 +23,7 @@ class ChatAvatarView extends StatelessWidget {
     this.size,
     this.onTap,
     this.url,
+    this.isLiving,
     this.builder,
     this.onLongPress,
     this.isCircle = false,
@@ -40,6 +41,7 @@ class ChatAvatarView extends StatelessWidget {
   final Function()? onTap;
   final Function()? onLongPress;
   final String? url;
+  final bool? isLiving;
   final CustomAvatarBuilder? builder;
   final bool isCircle;
   final BorderRadius? borderRadius;
@@ -93,7 +95,19 @@ class ChatAvatarView extends StatelessWidget {
     );
   }
 
-  Widget _normalAvatar() => _avatarView();
+  Widget _normalAvatar() => Stack(
+        children: [
+          _avatarView(),
+          isLiving ?? false
+              ? Positioned(
+                  child: Image.asset(
+                  "assets/images/living.gif",
+                  height: 15,
+                  width: 15,
+                ))
+              : Text("")
+        ],
+      );
 
   Widget _avatarView() => null == url || url!.isEmpty
       ? _defaultAvatar()

@@ -23,6 +23,7 @@ class ChatToolsView extends StatefulWidget {
   final Widget? locationIcon;
   final Widget? fileIcon;
   final Widget? carteIcon;
+  final Widget? liveIcon;
   final Widget? voiceInputIcon;
   final EdgeInsetsGeometry? margin;
   final double? verticalSpacing;
@@ -44,6 +45,7 @@ class ChatToolsView extends StatefulWidget {
     this.videoCallIcon,
     this.locationIcon,
     this.fileIcon,
+    this.liveIcon,
     this.carteIcon,
     this.voiceInputIcon,
     this.margin,
@@ -180,10 +182,10 @@ class _ChatToolsViewState extends State<ChatToolsView>
             Column(
               children: [
                 _toolsOption(ToolsItem(
-                  label: UILocalizations.videoCall,
+                  label: UILocalizations.live,
                   style: toolsTextStyle,
                   image: _buildBtn(
-                    icon: widget.videoCallIcon ?? ImageUtil.toolsVideoCall(),
+                    icon: widget.liveIcon ?? ImageUtil.toolsLive(),
                     onTap: widget.onTapVideoCall,
                   ),
                 )),

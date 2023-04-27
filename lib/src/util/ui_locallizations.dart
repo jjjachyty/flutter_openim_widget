@@ -21,6 +21,7 @@ class UILocalizations {
       "album": "Album",
       "camera": "Camera",
       "videoCall": "Video Call",
+      "live": "Live",
       "picture": "Picture",
       "video": "Video",
       "voice": "Voice",
@@ -78,6 +79,7 @@ class UILocalizations {
       "picture": "图片",
       "video": "视频",
       "voice": "语音",
+      "live": "直播",
       "location": "位置",
       "file": "文件",
       "carte": "名片",
@@ -136,6 +138,8 @@ class UILocalizations {
   static String get camera => _value(key: 'camera');
 
   static String get videoCall => _value(key: 'videoCall');
+
+  static String get live => _value(key: 'live');
 
   static String get picture => _value(key: 'picture');
 

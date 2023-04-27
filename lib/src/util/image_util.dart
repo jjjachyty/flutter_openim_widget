@@ -147,6 +147,12 @@ class ImageUtil {
         height: 48.h,
       );
 
+  static Widget toolsLive() => assetImage(
+        'ic_tools_live',
+        width: 48.h,
+        height: 48.h,
+      );
+
   static Widget toolsVoiceInput() => assetImage(
         'ic_tools_voice_input',
         width: 48.h,

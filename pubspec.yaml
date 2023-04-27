@@ -45,10 +45,10 @@ dependencies:
   should_rebuild: ^1.0.1
 #  flutter_openim_sdk: 2.3.5+2
   flutter_openim_sdk:
-#    path: ../flutter_openim_sdk
-    git:
-      url: https://github.com/jjjachyty/Open-IM-SDK-Flutter.git
-      ref: main
+    path: ../Open-IM-SDK-Flutter
+    # git:
+    #   url: https://github.com/jjjachyty/Open-IM-SDK-Flutter.git
+    #   ref: main
 
 
 

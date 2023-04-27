@@ -19,6 +19,7 @@ class ConversationItemView extends StatelessWidget {
   final TextStyle contentStyle;
   final String? contentPrefix;
   final TextStyle? contentPrefixStyle;
+  final bool? isLiving;
   final String timeStr;
   final TextStyle timeStyle;
   final Color backgroundColor;
@@ -44,6 +45,7 @@ class ConversationItemView extends StatelessWidget {
     required this.timeStr,
     this.contentPrefix,
     this.contentPrefixStyle,
+    this.isLiving,
     this.avatarSize = 48,
     this.avatarUrl,
     this.avatarBuilder,
@@ -85,6 +87,7 @@ class ConversationItemView extends StatelessWidget {
       child: _ConversationView(
         title: title,
         content: content,
+        isLiving: isLiving,
         timeStr: timeStr,
         contentPrefix: contentPrefix,
         contentPrefixStyle: contentPrefixStyle,
@@ -143,6 +146,7 @@ class _ConversationView extends StatelessWidget {
     this.contentPrefix,
     this.contentPrefixStyle,
     this.onTap,
+    this.isLiving,
     this.notDisturb = false,
     this.isUserGroup = false,
   }) : super(key: key);
@@ -152,6 +156,7 @@ class _ConversationView extends StatelessWidget {
   final bool? isCircleAvatar;
   final BorderRadius? avatarBorderRadius;
   final String title;
+  final bool? isLiving;
   final TextStyle titleStyle;
   final String content;
   final TextStyle contentStyle;
@@ -186,6 +191,7 @@ class _ConversationView extends StatelessWidget {
               children: [
                 ChatAvatarView(
                   size: avatarSize,
+                  isLiving: isLiving,
                   url: avatarUrl,
                   builder: avatarBuilder,
                   isCircle: isCircleAvatar ?? false,
