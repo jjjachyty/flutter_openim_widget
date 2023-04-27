@@ -12,6 +12,7 @@ class ChatToolsView extends StatefulWidget {
   final Function()? onTapAlbum;
   final Function()? onTapCamera;
   final Function()? onTapVideoCall;
+  final Function()? onTapLive;
   final Function()? onTapLocation;
   final Function()? onTapFile;
   final Function()? onTapCarte;
@@ -38,6 +39,7 @@ class ChatToolsView extends StatefulWidget {
     this.onTapLocation,
     this.onTapFile,
     this.onTapCarte,
+    this.onTapLive,
     this.onStartVoiceInput,
     this.onStopVoiceInput,
     this.albumIcon,
@@ -186,7 +188,7 @@ class _ChatToolsViewState extends State<ChatToolsView>
                   style: toolsTextStyle,
                   image: _buildBtn(
                     icon: widget.liveIcon ?? ImageUtil.toolsLive(),
-                    onTap: widget.onTapVideoCall,
+                    onTap: widget.onTapLive,
                   ),
                 )),
                 _verticalSpacing,
