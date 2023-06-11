@@ -510,7 +510,7 @@ class _ChatItemViewState extends State<ChatItemView> {
                 soundPath: sound?.soundPath,
                 soundUrl: sound?.sourceUrl,
                 duration: sound?.duration,
-                // isPlaying: widget.isPlayingSound,
+                isPlaying: widget.isPlayingSound,
               ),
             );
           }
@@ -700,7 +700,7 @@ class _ChatItemViewState extends State<ChatItemView> {
         onLongPressLeftAvatar: widget.onLongPressLeftAvatar,
         onTapLeftAvatar: widget.onTapLeftAvatar,
         isSendFailed: widget.message.status == MessageStatus.failed,
-        isSending: widget.message.status == MessageStatus.sending,
+        isSending: false, //widget.message.status == MessageStatus.sending,
         timeView: _buildTimeView(widget.timeStr),
         messageTimeView: _buildTimeView(widget.messageTimeStr),
         isBubbleBg: isBubbleBg,

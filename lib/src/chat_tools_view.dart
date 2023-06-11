@@ -207,15 +207,15 @@ class _ChatToolsViewState extends State<ChatToolsView>
                 // )),
               ],
             ),
-            Spacer(),
-            _toolsOption(ToolsItem(
-              label: UILocalizations.location,
-              style: toolsTextStyle,
-              image: _buildBtn(
-                icon: widget.locationIcon ?? ImageUtil.toolsLocation(),
-                onTap: widget.onTapLocation,
-              ),
-            )),
+            // Spacer(),
+            // _toolsOption(ToolsItem(
+            //   label: UILocalizations.location,
+            //   style: toolsTextStyle,
+            //   image: _buildBtn(
+            //     icon: widget.locationIcon ?? ImageUtil.toolsLocation(),
+            //     onTap: widget.onTapLocation,
+            //   ),
+            // )),
           ],
         ),
       );

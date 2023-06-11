@@ -14,14 +14,14 @@ class ConversationItemView extends StatelessWidget {
   final bool? isCircleAvatar;
   final BorderRadius? avatarBorderRadius;
   final String title;
-  final TextStyle titleStyle;
+  late TextStyle titleStyle;
   final String content;
-  final TextStyle contentStyle;
+  late TextStyle contentStyle;
   final String? contentPrefix;
   final TextStyle? contentPrefixStyle;
   final bool? isLiving;
   final String timeStr;
-  final TextStyle timeStyle;
+  late TextStyle timeStyle;
   final Color backgroundColor;
   final double height;
   final double contentWidth;
@@ -34,6 +34,7 @@ class ConversationItemView extends StatelessWidget {
   final bool notDisturb;
   final double extentRatio;
   final bool isUserGroup;
+  final double textScaleFactor;
 
   // final bool isPinned;
 
@@ -43,6 +44,7 @@ class ConversationItemView extends StatelessWidget {
     required this.title,
     required this.content,
     required this.timeStr,
+    this.textScaleFactor = 1.0,
     this.contentPrefix,
     this.contentPrefixStyle,
     this.isLiving,
@@ -121,7 +123,7 @@ class ConversationItemView extends StatelessWidget {
 }
 
 class _ConversationView extends StatelessWidget {
-  const _ConversationView({
+  _ConversationView({
     Key? key,
     required this.title,
     required this.content,
@@ -163,7 +165,7 @@ class _ConversationView extends StatelessWidget {
   final String? contentPrefix;
   final TextStyle? contentPrefixStyle;
   final String timeStr;
-  final TextStyle timeStyle;
+  late TextStyle timeStyle;
   final Color backgroundColor;
   final double height;
   final double contentWidth;
