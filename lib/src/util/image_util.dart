@@ -148,7 +148,7 @@ class ImageUtil {
       );
 
   static Widget toolsLive() => assetImage(
-        'ic_tools_live',
+        'ic_tools_video_call',
         width: 48.h,
         height: 48.h,
       );
