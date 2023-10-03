@@ -1,5 +1,6 @@
 library flutter_text_selection_controls;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// This package allows you to create custom text selection controls and use them in the SelectableText widget or in the TextForm or TextFormField widgets.
@@ -51,7 +52,7 @@ class FlutterSelectionControls extends MaterialTextSelectionControls {
   void _onItemSelected({
     required ToolBarItem item,
     required TextSelectionDelegate delegate,
-    required ClipboardStatusNotifier? clipboardStatus,
+    required ValueListenable? clipboardStatus,
   }) async {
     /// Handles the callback if the itemControl was passed as an argument to the pressed [ToolBarItem]
     if (item.itemControl != null) {
@@ -59,7 +60,7 @@ class FlutterSelectionControls extends MaterialTextSelectionControls {
 
       /// Handle the callback if the itemControl passed is of type [ToolBarItemControl.copy]
       if (control == ToolBarItemControl.copy) {
-        if (canCopy(delegate)) return handleCopy(delegate, clipboardStatus);
+        if (canCopy(delegate)) return handleCopy(delegate);
         return;
       }
 
@@ -77,7 +78,7 @@ class FlutterSelectionControls extends MaterialTextSelectionControls {
 
       /// Handle the callback if the itemControl passed is of type [ToolBarItemControl.cut]
       if (control == ToolBarItemControl.cut) {
-        if (canCut(delegate)) return handleCut(delegate, clipboardStatus);
+        if (canCut(delegate)) return handleCut(delegate);
         return;
       }
 
@@ -116,7 +117,7 @@ class FlutterSelectionControls extends MaterialTextSelectionControls {
     Offset selectionMidpoint,
     List<TextSelectionPoint> endpoints,
     TextSelectionDelegate delegate,
-    ClipboardStatusNotifier? clipboardStatus,
+    ValueListenable<ClipboardStatus>? clipboardStatus,
     Offset? lastSecondaryTapDownPosition,
   ) {
     final TextSelectionPoint startTextSelectionPoint = endpoints[0];
@@ -176,7 +177,7 @@ class _SelectionToolBar extends StatefulWidget {
   final Offset anchorBelow;
 
   ///A [ValueNotifier] whose [value] indicates whether the current contents of the clipboard can be pasted.
-  final ClipboardStatusNotifier? clipboardStatus;
+  final ValueListenable? clipboardStatus;
 
   /// Widgets to be displayed on the text selection tool bar
   final List<ToolBarItem> toolBarItems;
@@ -218,7 +219,7 @@ class __SelectionToolBarState extends State<_SelectionToolBar> {
   void initState() {
     super.initState();
     widget.clipboardStatus!.addListener(_onChangedClipboardStatus);
-    widget.clipboardStatus!.update();
+    // widget.clipboardStatus!.update();
   }
 
   @override
@@ -228,15 +229,13 @@ class __SelectionToolBarState extends State<_SelectionToolBar> {
       widget.clipboardStatus!.addListener(_onChangedClipboardStatus);
       oldWidget.clipboardStatus!.removeListener(_onChangedClipboardStatus);
     }
-    widget.clipboardStatus!.update();
+    // widget.clipboardStatus!.update();
   }
 
   @override
   void dispose() {
     super.dispose();
-    if (!widget.clipboardStatus!.disposed) {
       widget.clipboardStatus!.removeListener(_onChangedClipboardStatus);
-    }
   }
 
   @override

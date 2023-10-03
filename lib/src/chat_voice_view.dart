@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import 'package:just_audio/just_audio.dart';
 
 // class ChatVoiceView extends StatefulWidget {
 //   final int index;

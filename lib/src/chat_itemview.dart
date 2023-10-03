@@ -754,7 +754,7 @@ class _ChatItemViewState extends State<ChatItemView> {
           // height: 20.h,
           decoration: widget.timeDecoration,
           child: Text(
-            time!,
+            time,
             style: widget.timeStyle ?? _hintTextStyle,
           ),
         );
